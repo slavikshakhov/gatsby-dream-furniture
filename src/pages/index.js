@@ -4,16 +4,38 @@ import { Link } from "gatsby"
 import Layout from "../components/layout"
 
 import SEO from "../components/seo"
-import { FaGulp } from "react-icons/fa"
+import { graphql, StaticQuery } from "gatsby"
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <FaGulp />
-  </Layout>
-)
+import BackgroundSection from "../components/BackgroundSection/BackgroundSection"
+import Story from "../components/Story/Story"
+
+const IndexPage = ({ data }) => {
+  return (
+    <Layout>
+      <SEO title="Home" />
+      <BackgroundSection
+        fluid={data.img.childImageSharp.fluid}
+        styling="homeStyle"
+      >
+        <h1 className="text-white text-uppercase text-center display-4 font-weight-bold">
+          welcome to dream furniture!
+        </h1>
+      </BackgroundSection>
+      <Story />
+    </Layout>
+  )
+}
 
 export default IndexPage
+
+export const query = graphql`
+  {
+    img: file(relativePath: { eq: "background.jpg" }) {
+      childImageSharp {
+        fluid(quality: 90, maxWidth: 1920) {
+          ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+  }
+`

@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react"
 import { Link } from "gatsby"
-import logo from "../../images/logo2.svg"
+import logo from "../../images/logo.png"
 import { FaCartArrowDown } from "react-icons/fa"
+import NavbarStyles from "./Navbar.module.scss"
 
 const Navbar = () => {
   const [navbarOpen, setNavbarOpen] = useState(false)
@@ -20,19 +21,22 @@ const Navbar = () => {
     }
   }
   return (
-    <nav className="navbar navbar-expand-sm bg-light navbar-light">
+    <nav className="navbar navbar-expand-sm navbar-light bg-light">
       <Link to="/" className="navbar-brand">
-        <img src={logo} alt="logo" height="40" width="40" />
+        <img src={logo} alt="logo" height="55" width="55" className="logoImg" />
       </Link>
       <button className="navbar-toggler" type="button" onClick={navbarHandler}>
         <span className="navbar-toggler-icon"></span>
       </button>
-      <div className={cssCollapse} id="navbarSupportedContent">
+      <div className={cssCollapse}>
         <ul className="navbar-nav mx-auto">
           {links.map(link => {
             return (
               <li key={link.id} className="nav-item">
-                <Link to={link.path} className="nav-link text-capitalize">
+                <Link
+                  to={link.path}
+                  className={`nav-link text-capitalize ${NavbarStyles.link}`}
+                >
                   {link.text}
                 </Link>
               </li>
