@@ -16,6 +16,7 @@ const IndexPage = ({ data }) => {
       <BackgroundSection
         fluid={data.img.childImageSharp.fluid}
         styling="homeStyle"
+        className="d-flex"
       >
         <h1 className="text-white text-uppercase text-center display-4 font-weight-bold">
           welcome to dream furniture!
