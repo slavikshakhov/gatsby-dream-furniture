@@ -5,9 +5,11 @@ import BackgroundStyles from "./BackgroundSection.module.scss"
 const BackgroundSection = ({ fluid, styling, children, topLayer }) => {
   return (
     <BackgroundImage fluid={fluid} className={BackgroundStyles[styling]}>
-      <div className={BackgroundStyles.topLayer}>{children}</div>
+      {children}
     </BackgroundImage>
   )
 }
 
 export default BackgroundSection
+
+// <div className={BackgroundStyles.topLayer}>{children}</div>

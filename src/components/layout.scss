@@ -48,3 +48,13 @@ h6 {
 .footer {
   background: var(--mainDark);
 }
+
+.layout-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.layout-top {
+  flex-grow: 1;
+  background-color: lightblue;
+}

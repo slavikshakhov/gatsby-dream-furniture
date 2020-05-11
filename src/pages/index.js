@@ -8,6 +8,7 @@ import { graphql, StaticQuery } from "gatsby"
 
 import BackgroundSection from "../components/BackgroundSection/BackgroundSection"
 import Story from "../components/Story/Story"
+import Items from "../components/Items/Items"
 
 const IndexPage = ({ data }) => {
   return (
@@ -23,6 +24,7 @@ const IndexPage = ({ data }) => {
         </h1>
       </BackgroundSection>
       <Story />
+      <Items menu={data.menu} />
     </Layout>
   )
 }
@@ -35,6 +37,24 @@ export const query = graphql`
       childImageSharp {
         fluid(quality: 90, maxWidth: 1920) {
           ...GatsbyImageSharpFluid_withWebp
+        }
+      }
+    }
+    menu: allContentfulItem {
+      edges {
+        node {
+          id
+          title
+          description {
+            description
+          }
+          price
+          category
+          pic {
+            fluid {
+              ...GatsbyContentfulFluid_tracedSVG
+            }
+          }
         }
       }
     }

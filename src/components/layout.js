@@ -26,16 +26,14 @@ const Layout = ({ children }) => {
   `)
 
   return (
-    <div>
-      <Navbar />
-      {children}
+    <div className="layout-container">
+      <div className="layout-top">
+        <Navbar className="" />
+        {children}
+      </div>
       <Footer />
     </div>
   )
-}
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
 }
 
 export default Layout
