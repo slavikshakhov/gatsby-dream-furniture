@@ -9,6 +9,7 @@ import { graphql, StaticQuery } from "gatsby"
 import BackgroundSection from "../components/BackgroundSection/BackgroundSection"
 import Story from "../components/Story/Story"
 import Items from "../components/Items/Items"
+import Contact from "../components/Contact/Contact"
 
 const IndexPage = ({ data }) => {
   return (
@@ -25,6 +26,7 @@ const IndexPage = ({ data }) => {
       </BackgroundSection>
       <Story />
       <Items menu={data.menu} />
+      <Contact />
     </Layout>
   )
 }
