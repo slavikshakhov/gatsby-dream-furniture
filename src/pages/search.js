@@ -2,14 +2,15 @@ import React from "react"
 
 import Layout from "../components/layout"
 
-import SEO from "../components/seo"
+//import SEO from "../components/seo"
 import Items from "../components/Items/Items"
 import { graphql } from "gatsby"
 
 const SearchPage = ({ data }) => {
   return (
     <Layout>
-      <SEO title="Search" />
+      {/* <SEO title="Search" /> */}
+      
       <div clasName="">
         <Items menu={data.menu} />
       </div>
