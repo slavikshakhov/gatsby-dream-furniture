@@ -4,6 +4,7 @@ import Layout from "../components/layout"
 
 import SEO from "../components/seo"
 import Items from "../components/Items/Items"
+import { graphql } from "gatsby"
 
 const SearchPage = ({ data }) => {
   return (
