@@ -62,3 +62,12 @@ export const query = graphql`
     }
   }
 `
+/*
+node {
+  image {
+    fluid {
+      ...GatsbyContentfulFluid
+    }
+  }
+}
+*/

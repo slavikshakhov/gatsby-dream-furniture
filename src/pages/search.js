@@ -32,7 +32,7 @@ export const query = graphql`
           category
           pic {
             fluid {
-              ...GatsbyContentfulFluid_tracedSVG
+              ...GatsbyContentfulFluid
             }
           }
         }
