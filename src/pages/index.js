@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 
 import Layout from "../components/layout"
 
-import SEO from "../components/seo"
+//import SEO from "../components/seo"
 import { graphql, StaticQuery } from "gatsby"
 
 import BackgroundSection from "../components/BackgroundSection/BackgroundSection"
@@ -14,7 +14,8 @@ import Contact from "../components/Contact/Contact"
 const IndexPage = ({ data }) => {
   return (
     <Layout>
-      <SEO title="Home" />
+      {/* <SEO title="Home" /> */}
+      
       <BackgroundSection
         fluid={data.img.childImageSharp.fluid}
         styling="homeStyle"

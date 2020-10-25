@@ -3,7 +3,7 @@ import { Link } from "gatsby"
 
 import Layout from "../components/layout"
 
-import SEO from "../components/seo"
+//import SEO from "../components/seo"
 import { graphql, StaticQuery } from "gatsby"
 
 import BackgroundSection from "../components/BackgroundSection/BackgroundSection"
@@ -12,7 +12,8 @@ import Story from "../components/Story/Story"
 const AboutPage = ({ data }) => {
   return (
     <Layout>
-      <SEO title="About" />
+      {/* <SEO title="About" /> */}
+      
       <BackgroundSection
         fluid={data.img.childImageSharp.fluid}
         styling="aboutStyle"
